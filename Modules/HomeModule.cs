@@ -1,7 +1,8 @@
 using Nancy;
 using System.Collections.Generic;
+using Finder.Object;
 
-namespace EnterNamespaceHere //replace with your desired namespace
+namespace Finder
 {
   public class HomeModule : NancyModule
   {
@@ -9,6 +10,13 @@ namespace EnterNamespaceHere //replace with your desired namespace
     {
       Get["/"] = _ => View["index.cshtml"];
       //Insert your GETs and POSTs here
+      Post["/find-weekday"] =_=>
+      {
+        string date = Request.Form["date"];
+        DayFinder newDayFinder = new DayFinder(date);
+        newDayFinder.Counter();
+        return View["index.cshtml", newDayFinder.GetDayOfWeek()];
+      };
     }
   }
 }

@@ -6,6 +6,19 @@
     <link rel="stylesheet" href="/css/styles.css" type="text/css">
   </head>
   <body>
-
+    <h3>Welcome to the Weekday Finder</h3>
+    <form action="/find-weekday" method="post">
+      <label for="date">Enter a date in this format "mm/dd/yyyy"</label>
+      <input type="text" name="date">
+      <button type="submit">Submit</button>
+    </form>
+    <div>
+      <p>
+        @if(Model != null)
+        {
+          @Model
+        }
+    </p>
+    </div>
   </body>
 </html>
