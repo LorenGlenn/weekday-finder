@@ -4,13 +4,14 @@ namespace Finder.Object
 {
   public class DayFinder
   {
+
     private int[] _epoch = {1, 1, 1900}; //Epoch date is 1/1/2000
     private string[] _daysOfWeek = { "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}; //Array organized with day of Epoch Date at index 0
+    private int[] monthDefs = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; // Number of days in each month, Jan, Feb, March, etc;
     private string _inputDate;
     private int[] _splitInputDate;
     private int _daysSinceEpoch;
     private bool _isInputLeapYear;
-    private int[] monthDefs = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31}; // Number of days in each month, Jan, Feb, March, etc;
 
     public DayFinder(string input)
     {
